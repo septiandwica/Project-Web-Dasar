@@ -1,0 +1,817 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+/* Navgasi */
+
+nav{
+    position: fixed;
+    display: flex;
+    background-color: #ffffff;
+    justify-content: space-around;
+    padding: 12px 0px;
+    width: 100%;
+    align-items: center;
+    z-index: 2;
+}
+nav .logo img{
+    width: 130px;
+}
+nav ul{
+    display: flex;
+    list-style: none;
+    width: 40%;
+    justify-content: space-between;
+}
+nav ul li a{
+    color: #0F044C;
+    text-align: justify;
+    text-decoration: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+}
+
+nav ul li a.btn-gabung{
+    padding: 10px 15px;
+    border-radius: 5px;
+    color: white;
+    background-color: #2d0de3;
+}
+nav ul li a:hover, 
+nav ul li a.active {
+    color: #2d0de3;
+    background: #EEEEEE;
+} 
+
+
+/* Hamburger Menu */
+.nav-toggle{
+    display: none;
+    flex-direction: column;
+    height: 20px;
+    justify-content: space-between;
+    position: relative;
+}
+.nav-toggle input{
+    position: absolute;
+    width: 40px;
+    height: 24px;
+    left: -5px;
+    top: -3px;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 2;
+}
+.nav-toggle div{
+    display: block;
+    width: 28px;
+    height: 4px;
+    background-color: #0F044C;
+    border-radius: 4px;
+    transition: all 0.5s;
+}
+.nav-toggle div.bar1{
+    transform-origin: 0 0;
+    
+}
+.nav-toggle div.bar3{
+    transform-origin: 0 100%;
+}
+.nav-toggle input:checked ~ div.bar1{
+    background-color:#0F044C ;
+    transform: rotate(45deg) translate(-1px, -1px);
+}
+.nav-toggle input:checked ~ div.bar3{
+    background-color:#0F044C ;
+    transform: rotate(-45deg) translate(-1.1px, 0.7px);
+}
+.nav-toggle input:checked ~ div.bar2{
+    opacity: 0;
+    transform: scale(0);
+}
+
+
+/* beranda */
+#beranda{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: url('../img/bgberanda.svg')no-repeat;
+    background-position: 0px 20px;
+}
+.beranda-ilust img{
+    padding: 80px 40px 0px 30px;
+    width: 550px;
+}
+.beranda-deskripsi h1{
+    font-size: 45px;
+    color: #0F044C;
+    line-height: 80px;
+    word-spacing: 10px;
+}
+.beranda-deskripsi h1 img{
+    width: 34px;
+}
+.beranda-deskripsi h2{
+    font-size: 28px;
+    color: #141E61;
+    padding: 0px 0px 50px 0px;
+}
+.beranda-deskripsi p{
+    color: #30313a;
+    padding: 0px 100px 25px 0px;
+    text-align: justify;
+}
+.btn-kelas{
+    text-decoration: none;
+    font-size: 17px;
+    padding: 10px 10px;
+    border-radius: 5px;
+    background-color: #2d0de3;
+    color: #EEEEEE;
+}
+.btn-kelas:hover{
+    color: #EEEEEE;
+    background-color: #2d0de3;
+    opacity: 0.5;
+}
+
+
+
+/* Tentang */
+#tentang{
+    padding: 10px 70px;
+    background: linear-gradient(200deg, #a6b2ff,#2d0de3 );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.tentang-deskripsi{
+    padding: 10px 40px 30px 40px;
+    word-spacing: 8px;
+    color: white;
+}
+.tentang-deskripsi h1{
+    font-size: 45px;
+    text-align: center;
+    color: white;
+    padding: 50px 0px 50px 0px;
+}
+.tentang-deskripsi p{
+    text-align: justify;
+}
+.total-peserta {
+    justify-content: center;
+    display: flex;
+    padding-top: 55px;
+}
+.jml{
+    font-size: 35px;
+    color: yellow;
+}
+.ket{
+    font-size: 19px;
+}
+.bts{
+    height: 69px;
+    width: 4px;
+    border-radius: 2px;
+    margin: 10px 20px;
+    background-color: #0F044C;
+}
+.tentang-ilust img{
+    padding-top: 80px;
+    width: 560px;
+}
+
+
+/* Kelas */
+#kelas{
+    text-align: center;
+}
+.kelas-deskripsi h1{
+    font-size: 45px;
+    padding-top: 95px;
+    color: #141E61;
+}
+.kelas-deskripsi p{
+    font-size: 18px;
+    word-spacing: 8px;
+    color: #30313a;
+    padding-bottom: 9px;
+}
+.kelas-card{
+    display: flex;
+    margin: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.card{
+    margin: 15px;
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 1px 1px 4px #2d0de3;
+    flex-basis: 18%;
+    cursor: pointer;
+    transition: .5s ease;
+}
+.card:hover{
+    transform: scale(1.05);
+    box-shadow: 1px 1px 7px #2d0de3;
+}
+.card-img img{
+    object-fit: cover;
+    padding: 10px 50px 0px 50px;
+    width: 120px;
+}
+.card-txt {
+    text-align: center;
+    padding: 20px;
+    color: #141E61;
+}
+.card-txt h2{
+    font-size: 20px;
+}
+.card-txt p{
+    padding-top: 15px;
+    padding-bottom: 20px;
+    text-align: justify;
+    font-size: 13px;
+    color: #30313a;
+}
+.card-btn{
+    text-decoration: none;
+    font-size: 12px;
+    padding: 8px 8px;
+    border-radius: 5px;
+    background-color: #2d0de3;
+    color: #EEEEEE;
+}
+.card-btn:hover{
+    color: white;
+    background-color: #2d0de3;
+    opacity: 0.5;
+}
+.btn-lihat{
+    text-align: center;
+    margin: 20px 0px 90px 0px;
+}
+.btn-lihat a{
+    background: white;
+    text-decoration: none;
+    color: #2d0de3;
+    padding: 5px 5px;
+    border: 3px solid #2d0de3;
+    border-radius: 5px;
+}
+.btn-lihat a:hover{
+    background: #2d0de3;
+    color: white;
+}
+
+
+/* Review */
+#review{
+    color: #080808;
+    height: 100vh;
+    background: linear-gradient(40deg, #a6b2ff,#2d0de3 );
+}
+#review h1{
+    font-size: 45px;
+    color: white;
+    text-align: center;
+    padding-top: 120px;
+}
+#review h1 .color{
+    text-decoration: underline;
+    color: yellow;
+}
+#review .txt{
+    padding-top: 10px;
+    color: white;
+    text-align: center;
+
+}
+.review-peserta{
+    width: 100%;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.review-deskripsi{
+    position: relative;
+    width: 900px;
+    min-width: 350px;
+    min-height: 150px;
+    padding-bottom: 40px;
+    overflow: hidden;
+}
+.review-wrapper{
+    width: 400%;
+    min-height: 100%;
+    display: flex;
+    justify-content: space-between;
+    transition: 1s;
+}
+.review-card{
+    width: 900px;
+    min-height: 100%;
+    background: white;
+    box-shadow: 2px 3px 4px #EEEEEE;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin: 0 10px;
+}
+.peserta{
+    width: 70%;
+    height: 250px;
+    overflow: hidden;
+    position: relative;
+}
+.peserta-img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.peserta-nama{
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    padding: 5px 20px;
+    background: white;
+    text-transform: capitalize;
+    font-size: 14px;
+}
+.card-ulasan{
+    width: 120%;
+    min-height: 100%;
+    height: auto;
+    margin-left: 20px;
+    position: relative;
+    padding-bottom: 50px;
+}
+.ulasan{
+    font-size: 16px;
+    line-height: 30px;
+    margin-top: 30px;
+    text-align: justify;
+}
+.bintang{
+    position: absolute;
+    bottom: 35px;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.star{
+    width: 25px;
+    margin-right: 5px;
+}
+.slider{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.slider button{
+    background: none;
+    border: none;
+    outline: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 2px solid white;
+    cursor: pointer;
+    margin-left: 5px;
+    transition: .5s;
+}
+button.active{
+    width: 40px;
+    border-radius: 50px;
+    background: white;
+}
+
+/* Kontak */
+#kontak{
+    min-height: 100vh;
+    width: 100%;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 50px;
+}
+.kontak-deskripsi{
+    width: 85%;
+    background: white;
+    padding: 20px 60px 30px 40px;
+    box-shadow: 1px 1px 4px #0F044C;
+}
+.kontak-deskripsi h1{
+    font-size: 45px;
+    text-align: center;
+    padding-bottom: 20px;
+    color: #141E61;
+}
+.kontak-konten{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.bio{
+    width: 35%;height: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+    position: relative;
+    text-align: center;
+}
+.bio::before{
+    content: '';
+    width: 3px;
+    right: -10px;
+    transform: translateY(-50%);
+    position: absolute;
+    height: 70%;
+    top: 50%;
+    background: #141E61;
+}
+.nama-pembuat{
+    padding: 10px 0px 10px 0px;
+}
+.nama-pembuat p{
+    color: #30313a;
+    font-size: 14px;
+}
+.nama-pembuat img{
+    border-radius: 50%;
+}
+.informasi-pembuat{
+    padding: 10px 0px 10px 0px;
+}
+.informasi-pembuat img{
+    padding: 10px;
+}
+.sosmed-pembuat img{
+    padding: 10px 5px;
+    width: 25px;
+}
+.form{
+    width: 85%;
+    margin-left: 75px;
+}
+.form h1{
+    font-size: 35px;
+    color: #141E61;
+    text-align: justify;
+}
+.form p{
+    color: #30313a;
+}
+.box-input{
+    height: 50px;
+    width: 80%;
+    margin: 12px 0;
+}
+.box-input input,
+.box-input textarea{
+    font-family: 'Poppins', sans-serif;
+    height: 100%;
+    width: 110%;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    background: #f0f0f0;
+    border-radius: 6px;
+    padding: 0 15px;
+    resize: none;
+}
+
+.box-pesan{
+    min-height: 110px;
+}
+
+.btn-kontak{
+    display: inline-block;
+    margin-top: 12px;
+}
+.btn-kontak input{
+    color: #EEEEEE;
+    cursor: pointer;
+    padding: 9px 18px;
+    font-size: 18px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    background: #2d0de3;
+}
+.btn-kontak input:hover{
+    background: #2d0da9;
+}
+
+
+/* Footer */
+.footer-deskripsi{
+    display: flex ;
+    justify-content: space-around;
+    align-items: center;
+    background: #EEEEEE;
+    padding: 50px;
+}
+.logo-footer img{
+    padding: 0px 0px 30px 0px;
+    width: 160px;
+}
+.logo-footer p{
+    color: #30313a;
+}
+
+ul .footer-item a{
+    color: #30313a;
+    text-decoration: none;
+}
+ul .footer-item .sosmed-footer img{
+    width: 28px;
+    padding: 30px 5px 5px 0px;
+}
+.menu-footer ul,
+.kontak-footer ul{
+    list-style: none;
+}
+.menu-footer h3,
+.kontak-footer h3{
+    font-size: 24px;
+    color: #141E61;
+}
+.footer-copyright{
+    font-size:smaller;
+    padding: 8px 0px 8px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background: #2d0de3;
+}
+
+/* view */
+@media screen and (max-width:1100px){
+    /* Navigasi Bar */
+    .nav-toggle{
+        display: flex;
+    }
+    nav{
+        z-index: 1;
+    }
+    nav ul{
+        position: absolute;
+        transform: translateX(100%);
+        right: 0;
+        top: 0;
+        height: 100vh;
+        width: 46%;
+        align-items: center;
+        flex-direction: column;
+        justify-content: space-evenly;
+        background-color: #ffffff;
+        z-index: 0;
+        opacity: 0;
+        transition: all 1s;
+    }
+    nav ul.menu{
+        opacity: 1;
+        transform: translateX(0);
+    }
+    #beranda{
+        background-position: 0px 70px;
+        transition: all .5s;
+    }
+    .beranda-ilust img{
+        width: 350px;
+    }
+    .beranda-deskripsi h1{
+        font-size: 40px;
+        line-height: 60px;
+    }
+    .beranda-deskripsi h1 img{
+        width: 30px;
+    }
+    .beranda-deskripsi h2{
+        font-size: 26px;
+    }
+    .beranda-deskripsi p{
+        font-size: 15px;
+    }
+    .btn-kelas{
+        font-size: 17px;
+        padding: 8px 9px;
+    }
+    
+    /* Tentang */
+    #tentang{
+        padding: 20px 30px;
+    }
+    .tentang-deskripsi{
+        font-size: 14px;
+    }
+    .tentang-ilust img{
+        width: 420px;
+    }
+
+    /* Kelas */
+    .kelas-card{
+        display: flex;
+        margin: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .kelas-deskripsi h1{
+        font-size: 40px;
+    }
+
+}
+
+
+@media screen and (max-width:900px){
+    /* Beranda */
+    #beranda{
+        flex-direction: column;
+        padding-top: 100px;
+        text-align: center;
+        transition: all .5s;
+    }
+    .beranda-ilust img{
+        width: 320px;
+        padding-left: 80px;
+        justify-content: center;
+    }
+    .beranda-deskripsi{
+        padding-top: 40px;
+        align-items: center;
+    }
+    .beranda-deskripsi p{
+        text-align: center;
+        padding: 0px 20px 25px 20px;
+    }
+
+    /* tentang */
+     #tentang{
+       flex-direction: column;
+       transition: all 0.5s;
+    }
+    .tentang-ilust img{
+        padding-top: 40px;
+        width: 300px;
+    }
+
+    
+    
+    /* Review */
+    #review{
+        height: 120vh;
+    }
+    #review h1{
+        font-size: 35px;
+    }
+    .review-peserta{
+        height: 80vh;
+    }
+    .review-deskripsi{
+        width: 10%;
+        margin: auto;
+    }
+    .review-card{
+        flex-direction: column;
+    }
+    .peserta{
+        width: 100%;
+    }
+    .card-ulasan{
+        width: 100%;
+        min-height: auto;
+        margin-left: 0;
+    }
+    .bintang{
+        position: absolute;
+        bottom: 0px;
+    }
+
+    /* Kontak */
+    .kontak-deskripsi{
+        margin: 40px 0;
+        width: 70%;
+        height: 80%;
+    }
+    .kontak-deskripsi h1{
+        font-size: 35px;
+    }
+    .kontak-konten{
+        flex-direction: column-reverse;
+    }
+    .bio{
+       width: 100%;
+       margin-top: 70px;
+       justify-content: center;
+       flex-wrap: wrap;
+    }
+    .bio::before{
+       display: none;
+    }
+    .form{
+       width: 100%;
+       margin-left: 0;
+       text-align: justify;
+    }
+    .form h1{
+        font-size: 25px;
+    }
+
+    /* Footer */
+    .footer-deskripsi{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .logo-footer img{
+        padding: 0px 0px 5px 0px;
+        width: 160px;
+    }
+    .logo-footer p{
+        padding: 5px 0px 20px 0px;
+    }
+}
+@media screen and (max-width:576px){
+    /* Beranda */
+    #beranda{
+        padding-top: 80px;
+    }
+    .beranda-ilust img{
+        width: 250px;
+    }
+    .beranda-deskripsi h1{
+        font-size: 35px;
+    }
+    .beranda-deskripsi h1 img{
+        width: 27px;
+    }
+    .beranda-deskripsi h2{
+        font-size: 24px;
+    }
+   
+    /* Tentang */
+    .tentang-deskripsi h1{
+        font-size: 35px;
+    }
+    .total-peserta {
+        justify-content: center;
+        display: flex;
+    }
+    .jml{
+        font-size: 27px;
+        color: yellow;
+    }
+    .ket{
+        font-size: 16px;
+    }
+    .bts{
+        height: 59px;
+        width: 3px;
+        border-radius: 2px;
+        margin: 7px 20px;
+    }
+    .tentang-ilust img{
+        display: none;
+    }
+
+    /* Kelas */
+    .kelas-deskripsi h1{
+        font-size: 35px;
+    }
+
+    /* Foorer */
+    .footer-copyright{
+        font-size: 10px;
+    }
+
+
+}
+@media screen and (max-width:375px){
+    .tentang-ilust img{
+        display: none;
+    }
+    .review-deskripsi{
+        width: 200px;
+        min-width: 250px;
+        min-height: 50px;
+        padding-bottom: 40px;
+    }
+}
