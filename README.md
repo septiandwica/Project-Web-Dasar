@@ -27,3 +27,6 @@ Sebagai contoh: Header berisi judul dan navigation.
 
  # AUTHOR
  "SEPTIAN DWI CAHYO"
+
+#License
+[GNU GPLv3](LICENSE.txt)
